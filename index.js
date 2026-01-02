@@ -1,6 +1,13 @@
-function greet(name) {
-    return `Hello, ${name}! Welcome to backend development.`;
-}
+const express = require('express');
+const app = express();
+const PORT = 3000;
 
-// Test the function
-console.log(greet("Nisha"));
+// A simple GET route
+app.get('/', (req, res) => {
+    res.send('Hello,Iam Nisha! This is my first backend API.');
+});
+
+// Start the server
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+});
